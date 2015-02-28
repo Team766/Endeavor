@@ -14,6 +14,8 @@ import com.ma.bears.Endeavor.commands.Drive.TankDriveCommand;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.DriverStationLCD;
+import edu.wpi.first.wpilibj.Watchdog;
 
 /**
  * 2013 robot Endeavor.
@@ -33,6 +35,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * <p>Old things like elevator are not implemented.
  * 
  * @author Nicky Ivy nickivyca@gmail.com
+ * @author Brett Levenson
  */
 public class Endeavor extends IterativeRobot {
     
@@ -55,5 +58,6 @@ public class Endeavor extends IterativeRobot {
     public void teleopPeriodic(){
     	
     	Scheduler.getInstance().run();
+    	Watchdog.getInstance().feed();
     }
 }
