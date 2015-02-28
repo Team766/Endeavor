@@ -1,6 +1,8 @@
 package com.ma.bears.Endeavor;
 
+import com.ma.bears.Endeavor.commands.Shooter.ShootFrisbeeCommand;
 import com.ma.bears.Endeavor.commands.Shooter.ShootFrisbeesCommand;
+import com.ma.bears.Endeavor.commands.Shooter.SpinWheelUp;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -28,6 +30,7 @@ public class OI {
     buttonQuickTurn = new JoystickButton(jRight, Buttons.QuickTurn),
     buttonShoot = new JoystickButton(jBox, Buttons.Shoot),
     buttonDriverShoot = new JoystickButton(jRight, Buttons.DriverShoot),
+    buttonSpinWheels = new JoystickButton(jBox, Buttons.Spinner),
     
     GPbuttonShifter = new JoystickButton(jGpad, Buttons.GPShifter),
     GPbuttonReverse = new JoystickButton(jGpad, Buttons.GPReverse),
@@ -38,8 +41,10 @@ public class OI {
     public static boolean UseGamepad = false;
     
     public OI(){
-    	buttonShoot.whileHeld(new ShootFrisbeesCommand());
-    	GPbuttonShoot.whileHeld(new ShootFrisbeesCommand());
+    	//buttonShoot.whileHeld(new ShootFrisbeesCommand());
+    	//GPbuttonShoot.whileHeld(new ShootFrisbeesCommand());
+    	buttonSpinWheels.whileHeld(new SpinWheelUp());
+    	buttonShoot.whenPressed(new ShootFrisbeeCommand());
     }public boolean getShifter(){
 		return !UseGamepad? buttonShifter.get() : GPbuttonShifter.get();
 	}

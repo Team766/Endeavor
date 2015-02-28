@@ -29,7 +29,8 @@ package com.ma.bears.Endeavor;
  *  </pre>
  */ 
 public class Buttons {
-    public static int Shifter = 7;
+    public static int Spinner = 2;
+	public static int Shifter = 7;
     public static int Reverse = 7;
     public static int QuickTurn = 7;
     

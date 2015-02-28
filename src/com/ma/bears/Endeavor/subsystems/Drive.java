@@ -1,6 +1,6 @@
 package com.ma.bears.Endeavor.subsystems;
 
-import com.ma.bears.Victor884;
+import src.com.ma.bears.Victor884;
 import com.ma.bears.Endeavor.Ports;
 
 import edu.wpi.first.wpilibj.Solenoid;
